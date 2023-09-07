@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/foodHomeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mid_prep_ps.pages.HomeFragment"
+        android:label="Rainfall"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_foodHomeFragment"
+            app:destination="@id/foodHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fitnessHomeFragment"
+            app:destination="@id/fitnessHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fitnessHomeFragment"
+        android:name="com.example.mid_prep_ps.FitnessHomeFragment"
+        android:label="Fitness"
+        tools:layout="@layout/fragment_fitness_home" >
+        <action
+            android:id="@+id/action_fitnessHomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_fitnessHomeFragment_to_BMIFragment"
+            app:destination="@id/BMIFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodHomeFragment"
+        android:name="com.example.mid_prep_ps.pages.FoodHomeFragment"
+        android:label="Recipe"
+        tools:layout="@layout/fragment_food_home" >
+        <action
+            android:id="@+id/action_foodHomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav"/>
+        <action
+            android:id="@+id/action_foodHomeFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BMIFragment"
+        android:name="com.example.mid_prep_ps.pages.BMIFragment"
+        android:label="Calculate your BMI"
+        tools:layout="@layout/fragment_bmi">
+        <action
+            android:id="@+id/action_BMIFragment_to_fitnessHomeFragment"
+            app:destination="@id/fitnessHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.mid_prep_ps.pages.RecipeFragment"
+        android:label="RecipeFragment" >
+        <argument
+            android:name="RecipeID"
+            app:argType="string"
+            android:defaultValue="Null" />
+    </fragment>
+</navigation>

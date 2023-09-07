@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="recipePadding" tools:ignore="MissingDefaultResource">8dp</dimen>
+    <dimen name="lineSpacing" tools:ignore="MissingDefaultResource">8dp</dimen>
+</resources>

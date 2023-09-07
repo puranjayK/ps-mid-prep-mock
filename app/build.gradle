@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.mid_prep_ps"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlin_version"
+
+    //Coroutine and LifecycleScope
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.lifecycle_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+
+    // UI
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation("androidx.cardview:cardview:$rootProject.cardView")
+
+    // Room
+    implementation("androidx.room:room-runtime:$rootProject.roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$rootProject.roomVersion")
+    implementation "androidx.room:room-ktx:2.4.0"
+
+    //navigation component
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+//    implementation 'io.data2viz.charts:core:1.1.0-eap1'
+//    implementation 'io.data2viz.d2v:viz:0.8.12'
+//    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$rootProject.roomVersion")
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version")
+
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycle_version")
+
+    // Annotation processor for lifecycle
+    kapt("androidx.lifecycle:lifecycle-compiler:$rootProject.lifecycle_version")
+
+    // coroutines support for firebase operations
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$rootProject.coroutinesPlayServicesVersion"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+    // BoM for the Firebase platform
+    implementation platform("com.google.firebase:firebase-bom:$rootProject.firebaseBomVersion")
+
+    // Cloud Firestore library
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    // Firebase Authentication library
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    // Google Play services library
+    implementation "com.google.android.gms:play-services-auth:$rootProject.googlePlayServiceVersion"
+
+    // Testing
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    androidTestImplementation ("androidx.test.espresso:espresso-core:$rootProject.espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
+
+//    implementation "com.androidplot:androidplot-core:1.5.7"
+//
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
+
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1'
+
+}
