@@ -18,7 +18,7 @@ The app is divided into three main parts:
 - Users can input their weight and height to calculate their BMI.
 - In development: A calorie counter will be added, allowing users to track their calorie intake based on exercise.
 
-### 3. Rainfall Tracker
+### 3. Rainfall Tracker (In development)
 
 - This part of the app provides historical rainfall data.
 - Users can enter specific latitude and longitude coordinates to retrieve historical rainfall values for a given location.
